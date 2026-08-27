@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Threading.Tasks;
@@ -41,7 +42,10 @@ namespace StreetViewAddin.Buttons
 
             var latitude = mapPoint.Y.ToString(CultureInfo.InvariantCulture);
             var longitude = mapPoint.X.ToString(CultureInfo.InvariantCulture);
-            var url = $"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={latitude},{longitude}";
+            var viewpoint = Uri.EscapeDataString(`${latitude},${longitude}`);
+            var url =
+                $"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={viewpoint}" +
+                "&utm_source=street_scene_launcher&utm_campaign=open_street_view";
 
             Process.Start(new ProcessStartInfo
             {
