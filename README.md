@@ -1,4 +1,4 @@
-# Google Street View for ArcGIS Pro
+# Street View Launcher for ArcGIS Pro
 
 A lightweight ArcGIS Pro add-in that opens Google Street View from a clicked map location.
 This add-in does not store, download, or process Google Street View imagery and only opens Google Maps in a web browser in accordance with Google Maps Platform Terms of Service.
