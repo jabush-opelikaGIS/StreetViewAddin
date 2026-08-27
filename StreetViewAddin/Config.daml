@@ -5,20 +5,20 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{bb76e8d1-2c8d-4bc7-b3e3-66456a8f0c67}" version="1.0" desktopVersion="3.0.0" product="ArcGISPro">
-    <Name>Google Street View</Name>
-    <Description>Open Google Street View from a clicked map location.</Description>
+  <AddInInfo id="{bb76e8d1-2c8d-4bc7-b3e3-66456a8f0c67}" version="1.1" desktopVersion="3.0.0" product="ArcGISPro">
+    <Name>Street Scene Launcher</Name>
+    <Description>Open Google Maps Street View in a browser from a clicked map location.</Description>
     <Image>Images\StreetView32.png</Image>
     <Author>Community Release</Author>
     <Company>Community Release</Company>
-    <Date>3/20/2026</Date>
+    <Date>8/27/2026</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>
 
   <modules>
-    <insertModule id="StreetViewAddin_Module" className="Module1" autoLoad="false" caption="Google Street View">
+    <insertModule id="StreetViewAddin_Module" className="Module1" autoLoad="false" caption="Street Scene Launcher">
       <tabs>
-        <tab id="StreetViewAddin_Tab" caption="Google Street View">
+        <tab id="StreetViewAddin_Tab" caption="Street Scene Launcher">
           <group refID="StreetViewAddin_Group" />
         </tab>
       </tabs>
@@ -36,7 +36,7 @@
               loadOnClick="true"
               smallImage="Images\StreetView16.png"
               largeImage="Images\StreetView32.png">
-          <tooltip heading="Open Google Street View">Click the map to open Google Street View at that location in your default browser.</tooltip>
+          <tooltip heading="Open Google Maps Street View">Click the map to open Google Maps Street View at that location in your default browser.</tooltip>
         </tool>
       </controls>
     </insertModule>
