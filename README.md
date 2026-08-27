@@ -30,7 +30,7 @@ An independently developed ArcGIS Pro add-in that opens Google Maps Street View 
 
 ### Option 2: Manual installation
 
-1. Build or download `GoogleStreetView.esriAddinX`.
+1. Build or download `StreetViewAddin.esriAddinX`.
 2. Copy it to:
 
 ```text
