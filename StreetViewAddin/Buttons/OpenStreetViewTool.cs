@@ -33,7 +33,13 @@ namespace StreetViewAddin.Buttons
 
         protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
         {
-            e.Handled = true;
+            if (Module1.Current.IsSingleUseStreetView)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            e.Handled = e.ChangedButton == System.Windows.Input.MouseButton.Left;
         }
 
         protected override async Task HandleMouseDownAsync(MapViewMouseButtonEventArgs e)

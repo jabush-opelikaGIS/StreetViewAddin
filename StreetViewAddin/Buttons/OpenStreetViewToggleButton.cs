@@ -5,31 +5,36 @@ namespace StreetViewAddin.Buttons
 {
     internal class OpenStreetViewToggleButton : Button
     {
+        private const string StreetViewToolId = "StreetViewAddin_OpenStreetViewTool";
+        private const string ExploreToolId = "esri_mapping_exploreTool";
+
+        protected override void OnUpdate()
+        {
+            IsChecked = FrameworkApplication.CurrentTool == StreetViewToolId;
+        }
+
         protected override async void OnClick()
         {
-            const string streetViewToolId = "StreetViewAddin_OpenStreetViewTool";
-            const string exploreToolId = "esri_mapping_exploreTool";
-
             var currentTool = FrameworkApplication.CurrentTool;
-            if (currentTool == streetViewToolId)
+            if (currentTool == StreetViewToolId)
             {
                 var toolToRestore = Module1.Current.ToolToRestoreId;
-                if (string.IsNullOrWhiteSpace(toolToRestore) || toolToRestore == streetViewToolId)
-                    toolToRestore = exploreToolId;
+                if (string.IsNullOrWhiteSpace(toolToRestore) || toolToRestore == StreetViewToolId)
+                    toolToRestore = ExploreToolId;
 
-                Module1.Current.ToolToRestoreId = exploreToolId;
+                Module1.Current.ToolToRestoreId = ExploreToolId;
                 Module1.Current.IsSingleUseStreetView = false;
                 await FrameworkApplication.SetCurrentToolAsync(toolToRestore);
                 return;
             }
 
             Module1.Current.ToolToRestoreId =
-                string.IsNullOrWhiteSpace(currentTool) || currentTool == streetViewToolId
-                    ? exploreToolId
+                string.IsNullOrWhiteSpace(currentTool) || currentTool == StreetViewToolId
+                    ? ExploreToolId
                     : currentTool;
             Module1.Current.IsSingleUseStreetView = false;
 
-            await FrameworkApplication.SetCurrentToolAsync(streetViewToolId);
+            await FrameworkApplication.SetCurrentToolAsync(StreetViewToolId);
         }
     }
 }
