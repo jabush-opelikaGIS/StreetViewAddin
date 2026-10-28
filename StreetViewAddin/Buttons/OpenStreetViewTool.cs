@@ -74,7 +74,11 @@ namespace StreetViewAddin.Buttons
             }
             finally
             {
-                RestorePreviousTool();
+                if (Module1.Current.IsSingleUseStreetView)
+                {
+                    Module1.Current.IsSingleUseStreetView = false;
+                    RestorePreviousTool();
+                }
             }
         }
     }

@@ -13,6 +13,7 @@ namespace StreetViewAddin.Buttons
                 currentTool == "StreetViewAddin_OpenStreetViewTool"
                     ? "esri_mapping_exploreTool"
                     : currentTool;
+            Module1.Current.IsSingleUseStreetView = true;
 
             await FrameworkApplication.SetCurrentToolAsync(
                 "StreetViewAddin_OpenStreetViewTool");
