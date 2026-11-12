@@ -7,6 +7,10 @@ namespace StreetViewAddin
     {
         private static Module1 _this;
 
+        internal string ToolToRestoreId { get; set; } = "esri_mapping_exploreTool";
+
+        internal bool IsSingleUseStreetView { get; set; }
+
         public static Module1 Current =>
             _this ??= (Module1)FrameworkApplication.FindModule("StreetViewAddin_Module");
 

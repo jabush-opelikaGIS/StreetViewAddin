@@ -5,7 +5,11 @@ An independently developed ArcGIS Pro add-in that opens Google Maps Street View 
 ## Features
 
 - Adds a `Street Scene Launcher` tab in ArcGIS Pro
-- Adds an `Open Street View` map tool
+- Adds an `Open Street View` map tool. 
+	- Updated to visually show toggle status (Street View tool on left click until toggled off). 
+	- Wheel/right click actions unaffected.
+- Adds an `Open Street View` context item in the map view for a single use. 
+	- Tool changes to Street View target for one click only, then reverts.
 - Projects the clicked location to WGS84
 - Opens the closest available panorama in Google Maps
 - Does not embed, download, cache, scrape, modify, or redistribute Google imagery
@@ -19,7 +23,7 @@ An independently developed ArcGIS Pro add-in that opens Google Maps Street View 
 
 ## Installation
 
-1. Build or download `GoogleStreetView.esriAddinX`.
+1. Build or download `StreetView.esriAddinX`.
 2. Copy it to:
 
 ```text
@@ -59,6 +63,8 @@ The primary project files are:
 - `Config.daml`
 - `Module1.cs`
 - `Buttons/OpenStreetViewTool.cs`
+- `Buttons/OpenStreetViewContextButton.cs`
+- `Buttons/OpenStreetViewToggleButton.cs`
 
 ## Credits
 

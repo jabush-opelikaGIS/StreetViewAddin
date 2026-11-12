@@ -25,7 +25,7 @@
 
       <groups>
         <group id="StreetViewAddin_Group" caption="Tools" appearsOnAddInTab="true">
-          <tool refID="StreetViewAddin_OpenStreetViewTool" size="large" />
+          <button refID="StreetViewAddin_OpenStreetViewToggleButton" size="large" />
         </group>
       </groups>
 
@@ -38,7 +38,40 @@
               largeImage="Images\StreetView32.png">
           <tooltip heading="Open Google Maps Street View">Click the map to open Google Maps Street View at that location in your default browser.</tooltip>
         </tool>
+
+        <button id="StreetViewAddin_OpenStreetViewToggleButton"
+                caption="Open Street View"
+                className="Buttons.OpenStreetViewToggleButton"
+                loadOnClick="true"
+                smallImage="Images\StreetView16.png"
+                largeImage="Images\StreetView32.png">
+
+                <tooltip heading="Open Street View">
+                    Toggle Street View mode on/off for repeated map clicks.
+                </tooltip>
+        </button>
+
+        <button id="StreetViewAddin_OpenStreetViewContextButton"
+                caption="Open Street View"
+                className="Buttons.OpenStreetViewContextButton"
+                loadOnClick="true"
+                smallImage="Images\StreetView16.png"
+                largeImage="Images\StreetView32.png">
+
+                <tooltip heading="Open Street View">
+                    Activate Street View, then click the desired map location.
+                </tooltip>
+        </button>
       </controls>
     </insertModule>
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_popupToolContextMenu">
+          <insertButton
+            refID="StreetViewAddin_OpenStreetViewContextButton"
+            separator="true" />
+        </updateMenu>
+      </menus>
+    </updateModule>
   </modules>
 </ArcGIS>
