@@ -66,11 +66,9 @@ namespace StreetViewAddin.Buttons
 
                 var latitude = mapPoint.Y.ToString(CultureInfo.InvariantCulture);
                 var longitude = mapPoint.X.ToString(CultureInfo.InvariantCulture);
-                //var viewpoint = Uri.EscapeDataString(`${latitude},${longitude}`);
+
                 var url =
                     $"https://maps.google.com/maps?q=&layer=c&cbll={latitude},{longitude}&cbp=11,0,0,0,0";
-                    //$"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={latitude},{longitude}" +
-                    //"&utm_source=street_scene_launcher&utm_campaign=open_street_view";
 
                 Process.Start(new ProcessStartInfo
                 {
